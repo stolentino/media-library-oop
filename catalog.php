@@ -1,6 +1,6 @@
 <?php 
 $pageTitle = "Full Catalog";
-inclue("inc/header.php"); 
+include("inc/header.php"); 
 ?>
 
 <div class="section page">
