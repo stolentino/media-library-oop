@@ -23,18 +23,17 @@ include("inc/header.php");
 
 <div class="section catalog page">
     <div class="wrapper">
-        <h1><?php echo $pageTitle ?></h1>
+        <h1><?php 
+        if($section != null){
+            echo "<a href='catalog.php'>Full Catalog</a> &gt; ";
+        }
+        echo $pageTitle ?></h1>
         <ul class="items">
             <?php
                 $categories = array_category($catalog, $section);
                 //foreach($catalog as $id => $item){
                 foreach($categories as $id){
-                    /*echo "<li><a href='#'><img src='" 
-                    . $item["img"] . "' alt='" 
-                    . $item["title"] . "' />" 
-                    . "<p> View Details </p>"
-                    . "</a></li>";*/
-                    //echo get_item_html($id, $item);
+
                     echo get_item_html($id, $catalog[$id]);
                 }
             ?>
